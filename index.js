@@ -3,7 +3,6 @@ let count = 0;
 let timer;
 let quizData;
 let answers = [];
-
 // Dom elements called
 let startQuiz = document.querySelector("#startQuiz");
 let rulesContainer = document.querySelector("#rulesContainer");
@@ -12,7 +11,6 @@ let submitContainer = document.querySelector("#submitContainer");
 let quizContainer = document.querySelector("#quizContainer");
 let answersContainer = document.querySelector("#answersContainer");
 let displayResult = document.querySelector("#displayResult");
-
 // EventListener for quiz start button
 startQuiz.addEventListener("click", () => {
   let countDown = document.querySelector("#countDownContainer");
@@ -20,7 +18,6 @@ startQuiz.addEventListener("click", () => {
   let counterNum = 2;
   countDown.classList.remove("hidden");
   countDown.classList.add("flex");
-
   let x = setInterval(() => {
     if (counterNum < 0) {
       countDown.classList.remove("flex");
@@ -42,7 +39,6 @@ startQuiz.addEventListener("click", () => {
     counterNum--;
   }, 1000);
 });
-
 // All quiz data fetched from json
 const loadQuiz = async () => {
   const res = await fetch("./data/quiz.json");
@@ -50,14 +46,12 @@ const loadQuiz = async () => {
   quizData = data;
   displayQuiz(data);
 };
-
 // Displaying quiz on quiz page
 const displayQuiz = (data) => {
   if (!data) {
     quizContainer.innerHTML = "";
     return;
   }
-
   data.forEach((quiz, i) => {
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
@@ -72,7 +66,6 @@ const displayQuiz = (data) => {
 </div>`;
   });
 };
-
 // EventListener for quiz submit button
 document.querySelector("#submit").addEventListener("click", () => {
   if (answers.length < 6) {
@@ -89,13 +82,11 @@ document.querySelector("#submit").addEventListener("click", () => {
     status: "",
     color: "",
   };
-
   for (let ans of answers) {
     if (ans.answer === ans.givenAns) {
       totalMark += 10;
     }
   }
-
   if (totalMark === 60) {
     grade.status = "Excellent";
     grade.color = "text-green-600";
@@ -106,7 +97,6 @@ document.querySelector("#submit").addEventListener("click", () => {
     grade.status = "Poor";
     grade.color = "text-red-600";
   }
-
   // data setting on local storage and getting data from local storage
   let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
@@ -133,7 +123,6 @@ document.querySelector("#submit").addEventListener("click", () => {
       ])
     );
   }
-
   // Right side bar/ answer section
   let x = setTimeout(() => {
     showAnswers(answers);
@@ -178,7 +167,6 @@ document.querySelector("#submit").addEventListener("click", () => {
   }
   </div>
   `;
-
     clearTimeout(x);
   }, 1500);
   window.scrollTo(0, 0);
