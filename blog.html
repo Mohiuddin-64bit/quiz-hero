@@ -22,10 +22,9 @@
       style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 
     <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-
       <div class="pl-4">
         <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
-          Minimal Blog
+          Mohiuddin's Blog
         </a>
       </div>
 
@@ -66,6 +65,7 @@
 
       <!--Title-->
       <div class="font-sans">
+        <a href="" class="bg-indigo-500 px-5 py-1 rounded text-white" onclick="window.location.href='/index.html'">Back</a>
         <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">Welcome to Javascript
           Blog</h1>
         <p class="text-sm md:text-base font-normal text-gray-600">Published 15 February 2023</p>
@@ -118,6 +118,17 @@
         empty, the event loop takes the next function from the callback queue and pushes it onto the call stack to be
         executed.
       </h5>
+      <h3 class="text-2xl font-bold"><span class="bg-indigo-400 rounded p-1">Question:</span> What is the quizTimer function in JavaScript, and how is it used to create a timer for a quiz?
+      </h3>
+      <h5 class="text-lg my-5"><span class="bg-green-400 rounded p-1">Answer:</span>
+        The quizTimer function is a JavaScript function that takes a single argument dismiss. The function is used to create a timer for a quiz. If the dismiss argument is true, the function clears the timer and returns. Otherwise, the function sets an interval that runs every second. The interval updates the timer display on the page and changes the color of the timer every 60 seconds.
+      </h5>
+      <h3 class="text-2xl font-bold"><span class="bg-indigo-400 rounded p-1">Question:</span> What is the chooseQuiz function in JavaScript, and how is it used to add quiz answers to an array?
+      </h3>
+      <h5 class="text-lg my-5"><span class="bg-green-400 rounded p-1">Answer:</span>
+        The chooseQuiz function is a JavaScript function that takes two arguments index and givenAns. The function is used to choose a quiz answer and add it to an array of answers. If the answer already exists in the array, the function updates the existing answer. Otherwise, the function adds the new answer to the array.
+      </h5>
+
 
 
 
@@ -144,17 +155,12 @@
         </div>
       </div>
       <!-- /Subscribe-->
-
-
-
       <!--Author-->
       <div class="flex w-full items-center font-sans px-4 py-12">
-        <img class="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
+        
         <div class="flex-1 px-2">
-          <p class="text-base font-bold text-base md:text-xl leading-none mb-2">Jo Bloggerson</p>
-          <p class="text-gray-600 text-xs md:text-base">Minimal Blog Tailwind CSS template by <a
-              class="text-green-500 no-underline hover:underline"
-              href="https://www.tailwindtoolbox.com">TailwindToolbox.com</a></p>
+          <p class="text-base font-bold text-base md:text-xl leading-none mb-2">Mohiuddin</p>
+          <p class="text-gray-600 text-xs md:text-base">I am a Front-End Web Developer. Right now I'm Learning JavaScript.</p>
         </div>
         <div class="justify-end">
           <button
